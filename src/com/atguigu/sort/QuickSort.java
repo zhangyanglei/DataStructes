@@ -1,13 +1,20 @@
 package com.atguigu.sort;
 
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = {-9, 78, 0, 23, -567, 70, -1, 900, 4561};
+//        int[] arr = {-9, 78, 0, 23, -567, 70};
+        int[] arr = new int[80000000];
+        for (int i = 0; i < 80000000; i++) {
+            arr[i] = ThreadLocalRandom.current().nextInt(8000000);
+        }
+        long start = System.currentTimeMillis();
         quickSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("耗费的时间=" + (System.currentTimeMillis() - start));
+//        System.out.println(Arrays.toString(arr));
     }
 
     public static void quickSort(int[] arr, int left, int right) {

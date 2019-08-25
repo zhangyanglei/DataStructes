@@ -7,14 +7,14 @@ public class ShellSort {
 
     public static void main(String[] args) {
 //        int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
-        int[] arr = new int[80000];
-        for (int i = 0; i < 80000; i++) {
+        int[] arr = new int[80000000];
+        for (int i = 0; i < 80000000; i++) {
             arr[i] = ThreadLocalRandom.current().nextInt(8000000);
         }
         long start = System.currentTimeMillis();
         shellSort2(arr);
         System.out.println("耗费的时间=" + (System.currentTimeMillis() - start));
-        System.out.println("希尔排序后=" + Arrays.toString(arr));
+//        System.out.println("希尔排序后=" + Arrays.toString(arr));
     }
 
     public static void shellSort(int[] arr) {
